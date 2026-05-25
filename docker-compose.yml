@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  agent:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./kotrac_agent.db:/app/kotrac_agent.db
+    restart: unless-stopped
