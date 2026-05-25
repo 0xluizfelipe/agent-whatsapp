@@ -1,0 +1,33 @@
+INSTRUÇÕES — Como adicionar conhecimento à Catarina
+=====================================================
+
+Coloque arquivos nesta pasta (knowledge/) para expandir o conhecimento do agente.
+
+FORMATOS ACEITOS:
+- .txt  → Texto simples (recomendado para a maioria dos casos)
+- .md   → Markdown
+- .csv  → Tabelas (ex: lista de preços)
+- .json → Dados estruturados
+- .yaml → Configurações
+
+EXEMPLOS DE ARQUIVOS ÚTEIS:
+- servicos.txt       → Lista detalhada de todos os serviços oferecidos
+- precos.txt         → Tabela de preços (se quiser informar valores)
+- faq.txt            → Perguntas e respostas frequentes
+- marcas_atendidas.txt → Marcas e modelos de máquinas que vocês atendem
+- prazo_entrega.txt  → Informações sobre prazos de serviço
+- garantia.txt       → Política de garantia
+- parceiros.txt      → Fornecedores e marcas parceiras
+
+COMO ATUALIZAR APÓS ADICIONAR ARQUIVOS:
+1. Adicione o arquivo na pasta knowledge/
+2. Faça commit e push para o GitHub:
+   git add knowledge/
+   git commit -m "feat: adiciona novo conhecimento"
+   git push
+3. O Railway faz o redeploy automático.
+
+OU, sem precisar de redeploy, chame o endpoint:
+   POST https://agent-whatsapp-production-24c2.up.railway.app/reload
+
+ESTE ARQUIVO É APENAS INSTRUCIONAL — pode apagar ou deixar aqui.

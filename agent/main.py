@@ -28,6 +28,13 @@ async def root():
     return {"status": "online", "agent": "Catarina", "empresa": "Kotrac"}
 
 
+@app.post("/reload")
+async def reload_knowledge():
+    """Recarrega a base de conhecimento da pasta knowledge/ sem reiniciar o servidor."""
+    brain.reload_knowledge()
+    return {"status": "ok", "message": "Base de conhecimento recarregada com sucesso."}
+
+
 @app.get("/webhook")
 async def verify_webhook(request: Request):
     provider = get_provider()
